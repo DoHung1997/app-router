@@ -1,6 +1,8 @@
 import {getTranslations, unstable_setRequestLocale} from "next-intl/server";
 import {getAllSeoProducts} from "@/api/request/product";
 import HomeContainer from "@/components/Home";
+import {Context} from "node:vm";
+import {GetServerSideProps} from "next";
 
 export async function generateMetadata({params: {locale}}: { params: { locale: string } }) {
     const t = await getTranslations({locale, namespace: 'HomePage'});
@@ -31,3 +33,7 @@ export default async function HomePage({params: {locale}}: { params: { locale: s
         </div>
     );
 }
+
+// export const getServerSideProps: GetServerSideProps = async (context: Context) => {
+//
+// }
