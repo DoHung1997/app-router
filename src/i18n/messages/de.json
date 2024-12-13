@@ -1,0 +1,60 @@
+{
+  "login": "Login",
+  "register": "Register",
+  "home": "Home",
+  "product": "Product",
+  "customer": "Customer",
+  "email": "Email",
+  "password": "Password",
+  "confirm_password": "Confirm Password",
+  "first_name": "First Name",
+  "last_name": "Last Name",
+  "company": "Company",
+  "phone": "Phone number",
+  "close": "Close",
+  "submit": "Submit",
+  "AuthPage": {
+    "dont_have_account": "Don't have an account",
+    "already_have_account": "Already have an account",
+    "email_is_required": "Email is required!",
+    "email_is_invalid": "Email is invalid!",
+    "password_is_required": "Password is required!",
+    "password_is_invalid": "Password is invalid",
+    "first_name_is_required": "First name is required",
+    "first_name_is_too_long_short": "First name is too long(short)",
+    "last_name_is_required": "Last name is required",
+    "last_name_is_too_long_short": "Last name is too long(short)",
+    "company_is_required": "Company is required",
+    "phone_number_is_invalid": "Your phone number is invalid"
+  },
+  "HomePage": {
+    "title": "Hello world!",
+    "description": "Home Page",
+    "about": "Go to the About page",
+    "og": {
+      "title": "Home",
+      "description": "Home Page"
+    }
+  },
+  "ProductPage": {
+    "product": "Product",
+    "title": "Product Hello world!",
+    "description": "Product Page",
+    "about": "Go to the About page",
+    "home": "Go to Home Page",
+    "og": {
+      "title": "Product",
+      "description": "Product Page"
+    }
+  },
+  "CustomerPage": {
+    "customer": "Customer",
+    "title": "Customer Hello world!",
+    "about": "Go to the About page",
+    "home": "Go to Customer Page",
+    "og": {
+      "title": "Customer",
+      "description": "Customer Page"
+    }
+  }
+}

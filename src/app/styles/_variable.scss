@@ -1,0 +1,19 @@
+$primary-color: #eb5849;
+$secondary-color: #262834;
+$secondary-color-15: #373944;
+
+$page-x-space: 80px;
+$header-height: 48px;
+$header-icon-size: 1.3rem;
+$nav-chat-app-height: 57px;
+
+:export {
+  primaryColor: $primary-color;
+  secondaryColor: $secondary-color;
+  secondaryColor15: $secondary-color-15;
+
+  pageXSpace: $page-x-space;
+  headerHeight: $header-height;
+  headerIconSize: $header-icon-size;
+  navChatAppHeight: $nav-chat-app-height;
+}

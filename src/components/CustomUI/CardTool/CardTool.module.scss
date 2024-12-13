@@ -1,0 +1,10 @@
+.card-wrapper {
+  scale: 1;
+  cursor: pointer;
+
+  &:hover {
+    scale: 1.1;
+    transition: all linear .3s;
+    background: linear-gradient(90deg, rgba(38, 40, 52, 1) 0%, rgba(55, 57, 68, 1) 60%, rgba(86, 88, 105, 1) 100%) !important;
+  }
+}

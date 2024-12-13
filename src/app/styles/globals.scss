@@ -1,0 +1,92 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import "variable";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+main {
+  position: relative;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+}
+
+// Default Page Wrapper //
+.page-wrapper {
+  width: 100%;
+  height: 100%;
+}
+
+
+// Scrollbar Custom //
+html::-webkit-scrollbar {
+  width: 1px;
+}
+
+html::-webkit-scrollbar-track {
+  border-radius: 4px;
+  background-position: -5px;
+  background-repeat: repeat-y;
+  background-size: 1px;
+}
+
+html::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 1px;
+}
+
+
+// Background color //
+.bg-secondary15 {
+  background-color: $secondary-color-15;
+}
+
+.bg-secondary {
+  background-color: $secondary-color;
+}
+
+// Border color //
+.border-secondary {
+  border-color: $secondary-color;
+}
