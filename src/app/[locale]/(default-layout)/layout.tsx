@@ -5,7 +5,6 @@ import {getTranslations, unstable_setRequestLocale} from "next-intl/server";
 import "@/app/styles/globals.scss";
 import DefaultLayout from "@/components/Layouts/DefaultLayout";
 import {routing} from "@/i18n/routing";
-import AppLoading from "@/components/AppLoading";
 import Loading from "@/app/[locale]/loading";
 
 export async function generateMetadata({params: {locale}}: { params: { locale: string } }) {

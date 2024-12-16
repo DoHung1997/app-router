@@ -1,6 +1,6 @@
 import {getTranslations, unstable_setRequestLocale} from "next-intl/server";
-import ProductDetailContainer from "@/components/ProductDetail";
 import {getSeoProductById} from "@/api/request/product";
+import ProductDetailContainer from "@/components/ProductDetail";
 
 export async function generateMetadata({params: {locale}}: { params: { locale: string } }) {
     const t = await getTranslations({locale, namespace: 'HomePage'});
@@ -23,11 +23,9 @@ export default async function ProductDetailPage({params: {locale, id}}: { params
 
     const [product] = await Promise.all([getProduct])
 
-    console.log('product', product)
-
     return (
         <div>
-            <ProductDetailContainer product={{name: id}}/>
+            <ProductDetailContainer product={product}/>
         </div>
     )
 }

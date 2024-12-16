@@ -1,5 +1,5 @@
 import api from "@/api";
-import {handleResponse} from "@/helpers";
+import {handleErrorApi} from "@/helpers";
 
 export const getAllSeoProducts = async () => {
     try {
@@ -8,9 +8,11 @@ export const getAllSeoProducts = async () => {
             pageNumber: 1,
             search: ''
         })
-        return handleResponse(response)
+        const promiseData = await response.data
+        return promiseData.result.items
     } catch (error) {
-        return error
+        console.log('error', handleErrorApi(error as any))
+        return []
     }
 }
 
@@ -22,7 +24,8 @@ export const getAllProducts = async () => {
             pageNumber: 1,
             search: ''
         })
-        return handleResponse(response)
+        const promiseData = await response.data
+        return promiseData.result.items
     } catch (error) {
         return error
     }
@@ -31,7 +34,8 @@ export const getAllProducts = async () => {
 export const getSeoProductById = async (id: string) => {
     try {
         const response = await api.get(`/v1/seo/product/${id}`)
-        return handleResponse(response)
+        const promiseData = await response.data
+        return promiseData.result
     } catch (error) {
         return error
     }

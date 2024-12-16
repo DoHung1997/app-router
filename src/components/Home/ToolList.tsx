@@ -1,8 +1,12 @@
+'use client'
+
 import React from 'react';
 import {useTranslations} from "next-intl";
 
 import CardTool from "@/components/CustomUI/CardTool";
 import {ProductModel} from "@/models/store/product";
+import {Button} from "@nextui-org/react";
+import {useRouter} from "@/i18n/routing";
 
 type PropsType = {
     products: ProductModel[]
@@ -10,6 +14,11 @@ type PropsType = {
 
 const ToolList: React.FC<PropsType> = ({products}) => {
     const t = useTranslations("HomePage")
+    const {push} = useRouter()
+
+    const handleGetCookies = () => {
+        push('/tool-view')
+    }
 
     return (
         <div className={'w-full text-center mx-auto'}>
@@ -19,11 +28,16 @@ const ToolList: React.FC<PropsType> = ({products}) => {
                     {t('easy_to_use')}
                 </p>
             </div>
+
+            <Button onPress={handleGetCookies}>
+                Tool View Page
+            </Button>
+
             <div className={'w-full h-full grid grid-cols-2 sm:grid-cols-4 xl:grid-cols-6 p-5 gap-x-10 gap-y-20'}>
                 {
                     products.map((product, index) => {
                         return (
-                            <div key={index}>
+                            <div key={product.id}>
                                 <CardTool product={product}/>
                             </div>
                         )

@@ -1,7 +1,6 @@
 import axios, {AxiosError, AxiosInstance, AxiosRequestConfig, AxiosResponse, InternalAxiosRequestConfig} from 'axios';
-import {debug,cookieGet} from '@/helpers';
+import {clearAuthData, cookieGet, debug} from '@/helpers';
 import {StorageKey} from '@/constants';
-import {clearAuthData} from "@/helpers";
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL;
 
@@ -21,6 +20,7 @@ const onRequest = (config: InternalAxiosRequestConfig): InternalAxiosRequestConf
     }
     if (locale) {
         headers['Accept-Language'] = locale;
+        // headers['cache'] = 'no-store'
     }
 
     return config;

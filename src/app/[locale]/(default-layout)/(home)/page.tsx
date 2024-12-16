@@ -1,8 +1,6 @@
 import {getTranslations, unstable_setRequestLocale} from "next-intl/server";
-import {getAllSeoProducts} from "@/api/request/product";
 import HomeContainer from "@/components/Home";
-import {Context} from "node:vm";
-import {GetServerSideProps} from "next";
+import {unstable_noStore} from "next/cache";
 
 export async function generateMetadata({params: {locale}}: { params: { locale: string } }) {
     const t = await getTranslations({locale, namespace: 'HomePage'});
@@ -22,18 +20,12 @@ export default async function HomePage({params: {locale}}: { params: { locale: s
     // Enable static rendering
     unstable_setRequestLocale(locale);
 
-    const seoProductsData = getAllSeoProducts();
+    // Dynamic API
+    unstable_noStore()
 
-    // Initiate both requests in parallel
-    const [seoProducts] = await Promise.all([seoProductsData])
-    console.log('seoProducts', seoProducts)
     return (
         <div className={`page-wrapper text-3xl`}>
-            <HomeContainer products={seoProducts}/>
+            <HomeContainer/>
         </div>
     );
 }
-
-// export const getServerSideProps: GetServerSideProps = async (context: Context) => {
-//
-// }

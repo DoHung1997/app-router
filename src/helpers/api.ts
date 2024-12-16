@@ -4,7 +4,7 @@ export const handleResponse = async (response: AxiosResponse) => await response.
 
 export const handleErrorApi = (err: AxiosError) => {
     let message = '';
-    if (err.status === 500 || !err.status) {
+    if (err.status === 500 || !err.status || err.message === '') {
         return "server_error"
     }
     const errResponse: any = err.response

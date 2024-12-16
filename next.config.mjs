@@ -7,7 +7,8 @@ const nextConfig = {
     reactStrictMode: false,
     experimental: {
         webpackBuildWorker: false,
-        taint: true
+        taint: true,
+        serverComponentsHmrCache: false,
     },
     env: {
         customKey: process.env.CUSTOM_KEY,
