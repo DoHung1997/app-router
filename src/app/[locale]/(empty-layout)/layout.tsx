@@ -5,6 +5,7 @@ import {getTranslations, unstable_setRequestLocale} from "next-intl/server";
 import "@/app/styles/globals.scss";
 import {routing} from "@/i18n/routing";
 import Loading from "@/app/[locale]/loading";
+import {unstable_noStore} from "next/cache";
 
 export async function generateMetadata({params: {locale}}: { params: { locale: string } }) {
     const t = await getTranslations({locale});
@@ -31,6 +32,8 @@ export default function RootLayout({
 
     // Enable static rendering
     unstable_setRequestLocale(locale);
+    // Dynamic API
+    unstable_noStore()
 
     return (
         <div className={'w-screen h-screen'}>
