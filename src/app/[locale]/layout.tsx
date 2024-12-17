@@ -1,10 +1,9 @@
-import React, {Suspense} from "react";
+import React from "react";
 import {getMessages, getTranslations, unstable_setRequestLocale} from "next-intl/server";
 import {notFound} from "next/navigation";
 
 import RootProviders from "@/app/RootProviders";
 import {routing} from "@/i18n/routing";
-import Loading from "@/app/[locale]/loading";
 
 export async function generateMetadata({params: {locale}}: { params: { locale: string } }) {
     const t = await getTranslations({locale});
@@ -38,9 +37,7 @@ export default async function LocaleLayout({
     return (
         <html lang={locale}>
         <body suppressHydrationWarning={true}>
-        <Suspense fallback={<Loading/>}>
-            <RootProviders locale={locale} messages={messages} children={children}/>
-        </Suspense>
+        <RootProviders locale={locale} messages={messages} children={children}/>
         </body>
         </html>
     );

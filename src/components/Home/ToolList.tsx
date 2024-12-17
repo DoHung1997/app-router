@@ -17,7 +17,7 @@ const ToolList: React.FC<PropsType> = ({products}) => {
         <div className={'w-full text-center mx-auto'}>
             <div className={'max-w-[600px] pb-20 text-center mx-auto'}>
                 <h1 className={'text-danger font-bold text-4xl'}>{t('we_make_easy_pdf')}</h1>
-                <p className={'text-gray-300 text-[20px] font-light max-w-[550px] mx-auto mt-5'}>
+                <p className={'text-gray-300 text-[20px] font-light max-w-[600px] mx-auto mt-5'}>
                     {t('easy_to_use')}
                 </p>
             </div>
