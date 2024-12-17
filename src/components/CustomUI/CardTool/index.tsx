@@ -1,6 +1,6 @@
 'use client'
 
-import React from "react";
+import React, {useMemo} from "react";
 import Image from "next/image";
 
 import styles from './CardTool.module.scss'
@@ -13,9 +13,20 @@ type PropsType = {
 }
 
 const CardTool: React.FC<PropsType> = ({product}) => {
+    const memoLink = useMemo(() => {
+        let link = product.description
+
+        const correctCharacter = product.description.startsWith("/")
+        if (!correctCharacter) {
+            link = `/${product.description}`
+        }
+
+        return link
+    }, [product]);
+
 
     return (
-        <Link href={`/${product.id}`}>
+        <Link href={memoLink}>
             <div
                 className={
                     `${styles.cardWrapper} border-secondary border w-full h-[120px] relative bg-secondary rounded shadow-xl hover:shadow-2xl`

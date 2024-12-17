@@ -36,7 +36,9 @@ export default function RootLayout({
     return (
         <DefaultLayout>
             <Suspense fallback={<Loading/>}>
-                {children}
+                <div className={'page-wrapper text-3xl'}>
+                    {children}
+                </div>
             </Suspense>
         </DefaultLayout>
     );

@@ -27,6 +27,9 @@ const UserMenu = ({userData}: { userData: AccountDataType | null }) => {
                     <p className="font-semibold">{t('AuthPage.signed_in_as')}</p>
                     <p className="font-semibold">{userData.email}</p>
                 </DropdownItem>
+                <DropdownItem key="document" className="h-14 gap-2">
+                    <p className="">{t('DocumentPage.my_document')}</p>
+                </DropdownItem>
                 <DropdownItem key="logout" color="danger">
                     <Link href={'/auth/logout'} className={'w-full'}>
                         <p className={'w-full'}>

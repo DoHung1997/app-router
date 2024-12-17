@@ -1,0 +1,22 @@
+.upload-box {
+  width: clamp(400px, 100%, 1000px);
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 5.1px 5.2px 86.4px rgba(0, 0, 0, 0.015),
+  10.3px 10.5px 103.4px rgba(0, 0, 0, 0.022),
+  15.5px 15.9px 107.2px rgba(0, 0, 0, 0.027),
+  20.9px 21.3px 105.8px rgba(0, 0, 0, 0.031),
+  26.3px 26.8px 103.2px rgba(0, 0, 0, 0.035),
+  31.7px 32.4px 102px rgba(0, 0, 0, 0.039),
+  36.9px 37.8px 105.1px rgba(0, 0, 0, 0.043),
+  41.8px 42.7px 117.1px rgba(0, 0, 0, 0.048),
+  45.3px 46.3px 147.8px rgba(0, 0, 0, 0.055),
+  45px 46px 249px rgba(0, 0, 0, 0.07);
+}
+
+.upload-button {
+  width: clamp(150px, 100%, 300px);
+}

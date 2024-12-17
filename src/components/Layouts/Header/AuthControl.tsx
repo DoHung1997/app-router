@@ -3,7 +3,7 @@ import {Button} from "@nextui-org/react";
 import {useTranslations} from "next-intl";
 import {useAppContext} from "@/context/AppContext";
 
-const AccountControl = () => {
+const AuthControl = () => {
     const t = useTranslations()
     const {setOpenAuthModal} = useAppContext()
 
@@ -20,4 +20,4 @@ const AccountControl = () => {
     );
 };
 
-export default AccountControl;
+export default AuthControl;

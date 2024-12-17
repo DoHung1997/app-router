@@ -43,26 +43,14 @@
     "we_make_easy_pdf": "We make PDF easy",
     "easy_to_use": "Free and easy-to-use online PDF tools can boost your productivity."
   },
-  "ProductPage": {
-    "product": "Product",
-    "title": "Product Hello world!",
-    "description": "Product Page",
-    "about": "Go to the About page",
-    "home": "Go to Home Page",
+  "ViewerPage": {
     "og": {
-      "title": "Product",
-      "description": "Product Page"
-    }
-  },
-  "CustomerPage": {
-    "customer": "Customer",
-    "title": "Customer Hello world!",
-    "description": "Customer Page",
-    "about": "Go to the About page",
-    "home": "Go to Customer Page",
-    "og": {
-      "title": "Customer",
-      "description": "Customer Page"
-    }
+      "title": "PDF View",
+      "description": "PDF Viewer",
+      "title_upload": "Upload PDF",
+      "description_upload": "Upload PDF"
+    },
+    "choose_file": "Choose File",
+    "click_or_drag_file_to_upload": "Click or drag file to this area to upload"
   }
 }

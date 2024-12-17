@@ -1,23 +1,21 @@
 'use client'
 
 import React, {useMemo} from 'react';
-import {useTranslations} from "next-intl";
-import {Link, usePathname} from "@/i18n/routing";
+import {Link} from "@/i18n/routing";
 import {Navbar, NavbarBrand, NavbarContent, NavbarItem} from "@nextui-org/react";
 
 import styles from './Header.module.scss'
 import UserMenu from "@/components/Layouts/Header/UserMenu";
-import AccountControl from "@/components/Layouts/Header/AccountControl";
+import AuthControl from "@/components/Layouts/Header/AuthControl";
+
 import {useAppContext} from "@/context/AppContext";
 
 
 const Header = () => {
-    const t = useTranslations()
-    const pathname = usePathname()
     const {userData} = useAppContext()
 
     const memoAuthMenu = useMemo(() => {
-        return userData ? <UserMenu userData={userData}/> : <AccountControl/>
+        return userData ? <UserMenu userData={userData}/> : <AuthControl/>
     }, [userData])
 
     return (
