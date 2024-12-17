@@ -1,6 +1,7 @@
 import {getTranslations, unstable_setRequestLocale} from "next-intl/server";
-import HomeContainer from "@/components/Home";
 import {unstable_noStore} from "next/cache";
+
+import HomeContainer from "@/components/Home";
 import {getAllSeoProducts} from "@/api/request/product";
 
 export async function generateMetadata({params: {locale}}: { params: { locale: string } }) {
