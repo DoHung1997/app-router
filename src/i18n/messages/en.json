@@ -52,5 +52,8 @@
     },
     "choose_file": "Choose File",
     "click_or_drag_file_to_upload": "Click or drag file to this area to upload"
+  },
+  "DocumentPage": {
+    "my_document": "My Document"
   }
 }

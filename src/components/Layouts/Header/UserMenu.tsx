@@ -1,8 +1,10 @@
 import React from 'react';
 import {Avatar, Dropdown, DropdownItem, DropdownMenu, DropdownTrigger} from "@nextui-org/react";
-import {AccountDataType} from "@/models";
 import {useTranslations} from "next-intl";
+
 import {Link} from "@/i18n/routing";
+import {ROUTES} from "@/constants";
+import {AccountDataType} from "@/models";
 
 const UserMenu = ({userData}: { userData: AccountDataType | null }) => {
     const t = useTranslations()
@@ -28,10 +30,14 @@ const UserMenu = ({userData}: { userData: AccountDataType | null }) => {
                     <p className="font-semibold">{userData.email}</p>
                 </DropdownItem>
                 <DropdownItem key="document" className="h-14 gap-2">
-                    <p className="">{t('DocumentPage.my_document')}</p>
+                    <Link href={ROUTES.MY_DOCUMENT} className={'w-full'}>
+                        <p className={'w-full'}>
+                            {t('DocumentPage.my_document')}
+                        </p>
+                    </Link>
                 </DropdownItem>
                 <DropdownItem key="logout" color="danger">
-                    <Link href={'/auth/logout'} className={'w-full'}>
+                    <Link href={ROUTES.LOGOUT} className={'w-full'}>
                         <p className={'w-full'}>
                             {t('log_out')}
                         </p>
