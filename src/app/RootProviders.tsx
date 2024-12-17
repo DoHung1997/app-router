@@ -12,15 +12,16 @@ import StoreProviders from "@/store/StoreProviders";
 import {ANT_THEME} from "@/constants";
 import Loading from "@/app/[locale]/loading";
 
-type ProvidersPropsType = { children: React.ReactNode, locale: string, messages: AbstractIntlMessages }
+type ProvidersPropsType = { children: React.ReactNode, locale: string, messages: AbstractIntlMessages, timeZone: string }
 
-const RootProviders = ({children, locale, messages}: ProvidersPropsType) => {
+const RootProviders = ({children, locale, messages, timeZone}: ProvidersPropsType) => {
     const {theme} = useTheme()
 
     return (
         <NextIntlClientProvider
             locale={locale}
             messages={messages}
+            timeZone={timeZone}
         >
             <Suspense fallback={<Loading/>}>
                 <StoreProviders>

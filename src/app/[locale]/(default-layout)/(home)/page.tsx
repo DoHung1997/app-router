@@ -4,6 +4,8 @@ import HomeContainer from "@/components/Home";
 import {getAllSeoProducts} from "@/api/request/product";
 import axios from "axios";
 
+
+
 export async function generateMetadata({params: {locale}}: { params: { locale: string } }) {
     const t = await getTranslations({locale, namespace: 'HomePage'});
 
@@ -22,14 +24,5 @@ export default async function HomePage({params: {locale}}: { params: { locale: s
     // Enable static rendering
     unstable_setRequestLocale(locale);
 
-    // Initiate both requests in parallel
-    const getPublicAPI = await axios.get('https://api.thecatapi.com/v1/images/search?limit=10')
-    const publicData = await getPublicAPI.data;
-    console.log('getPublicAPI', publicData)
-
-    const [seoProducts] = await Promise.all([getAllSeoProducts()])
-    console.log('seoProducts', seoProducts)
-
-
-    return (<HomeContainer seoProducts={seoProducts}/>);
+    return (<HomeContainer/>);
 }

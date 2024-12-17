@@ -1,5 +1,5 @@
 import React from "react";
-import {getMessages, getTranslations, unstable_setRequestLocale} from "next-intl/server";
+import {getMessages, getTimeZone, getTranslations, unstable_setRequestLocale} from "next-intl/server";
 import {notFound} from "next/navigation";
 
 import RootProviders from "@/app/RootProviders";
@@ -31,13 +31,20 @@ export default async function LocaleLayout({
 
     // Providing all messages to the client
     // side is the easiest way to get started
+    const timeZone = await getTimeZone();
     const messages = await getMessages();
     unstable_setRequestLocale(locale);
+
 
     return (
         <html lang={locale}>
         <body suppressHydrationWarning={true}>
-        <RootProviders locale={locale} messages={messages} children={children}/>
+        <RootProviders
+            timeZone={timeZone}
+            locale={locale}
+            messages={messages}
+            children={children}
+        />
         </body>
         </html>
     );

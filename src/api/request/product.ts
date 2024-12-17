@@ -16,7 +16,6 @@ export const getAllSeoProducts = async () => {
     }
 }
 
-
 export const getAllProducts = async () => {
     try {
         const response = await api.get('/v1/product', {

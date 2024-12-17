@@ -6,7 +6,6 @@ import "@/app/styles/globals.scss";
 import DefaultLayout from "@/components/Layouts/DefaultLayout";
 import {routing} from "@/i18n/routing";
 import Loading from "@/app/[locale]/loading";
-import {unstable_noStore} from "next/cache";
 
 export async function generateMetadata({params: {locale}}: { params: { locale: string } }) {
     const t = await getTranslations({locale});
@@ -18,6 +17,8 @@ export async function generateMetadata({params: {locale}}: { params: { locale: s
         }
     };
 }
+
+export const revalidate = 0
 
 export default function RootLayout({
                                        children,
@@ -35,13 +36,13 @@ export default function RootLayout({
     unstable_setRequestLocale(locale);
 
     return (
-        <Suspense fallback={<Loading/>}>
-            <DefaultLayout>
-                <div className={'page-wrapper text-3xl'}>
+        <DefaultLayout>
+            <div className={'page-wrapper text-3xl'}>
+                <Suspense fallback={<Loading/>}>
                     {children}
-                </div>
-            </DefaultLayout>
-        </Suspense>
+                </Suspense>
+            </div>
+        </DefaultLayout>
     );
 }
 

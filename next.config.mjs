@@ -10,6 +10,7 @@ const nextConfig = {
         taint: true,
         serverComponentsHmrCache: false,
     },
+    output: "",
     env: {
         customKey: process.env.CUSTOM_KEY,
     },

@@ -1,8 +1,9 @@
 import {createSlice} from "@reduxjs/toolkit";
-import {RootState} from "@/store/store";
+import {RootState, StoreStatus} from "@/store/store";
 import {ProductInitStateType} from "@/models/store/product";
+import {getSeoProducts} from "@/store/product/product.action";
 
-const initialState : ProductInitStateType = {
+const initialState: ProductInitStateType = {
     statusProductAction: '',
     products: []
 }
@@ -11,7 +12,18 @@ const productSlice = createSlice({
     name: 'product',
     initialState,
     reducers: {},
-    extraReducers: () => {
+    extraReducers: (builder) => {
+        builder
+            .addCase(getSeoProducts.pending, (state) => {
+                state.statusProductAction = StoreStatus.PENDING;
+            })
+            .addCase(getSeoProducts.fulfilled, (state, {payload}) => {
+                state.statusProductAction = StoreStatus.FULFILLED;
+                state.products = payload.items;
+            })
+            .addCase(getSeoProducts.rejected, (state) => {
+                state.statusProductAction = StoreStatus.REJECTED;
+            })
     }
 })
 

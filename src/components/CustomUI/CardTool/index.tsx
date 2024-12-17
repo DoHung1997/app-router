@@ -39,6 +39,8 @@ const CardTool: React.FC<PropsType> = ({product}) => {
                         alt={'tool'}
                         width={80} height={80}
                         className={'rounded-full'}
+                        sizes={'80px'}
+                        quality={100}
                     />
                 </div>
                 <div className={'mt-12 flex justify-center align-middle h-full text-white'}>
