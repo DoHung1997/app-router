@@ -5,7 +5,6 @@ import {notFound} from "next/navigation";
 import RootProviders from "@/app/RootProviders";
 import {routing} from "@/i18n/routing";
 import Loading from "@/app/[locale]/loading";
-import {unstable_noStore} from "next/cache";
 
 export async function generateMetadata({params: {locale}}: { params: { locale: string } }) {
     const t = await getTranslations({locale});
@@ -35,8 +34,6 @@ export default async function LocaleLayout({
     // side is the easiest way to get started
     const messages = await getMessages();
     unstable_setRequestLocale(locale);
-    // Dynamic API
-    unstable_noStore()
 
     return (
         <html lang={locale}>

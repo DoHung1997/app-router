@@ -21,8 +21,8 @@ export async function generateMetadata({params: {locale}}: { params: { locale: s
 export default async function HomePage({params: {locale}}: { params: { locale: string } }) {
     // Enable static rendering
     unstable_setRequestLocale(locale);
-    // Dynamic API
-    unstable_noStore()
+    // // Dynamic API
+    // unstable_noStore()
 
     const seoProductsData = getAllSeoProducts();
     // Initiate both requests in parallel
