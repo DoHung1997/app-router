@@ -13,7 +13,7 @@ const onRequest = (config: InternalAxiosRequestConfig): InternalAxiosRequestConf
     debug(`🚀 [HOST] ${API_URL} | [API] ${method?.toUpperCase()} ${url} | Request`);
 
     const token = cookieGet(StorageKey.TOKEN);
-    const locale = cookieGet(StorageKey.LOCALE) ?? 'de';
+    const locale = cookieGet(StorageKey.LOCALE) ?? 'en';
 
     if (token) {
         headers.Authorization = `Bearer ${token}`;

@@ -33,8 +33,6 @@ export default function RootLayout({
 
     // Enable static rendering
     unstable_setRequestLocale(locale);
-    // Dynamic API
-    unstable_noStore()
 
     return (
         <Suspense fallback={<Loading/>}>

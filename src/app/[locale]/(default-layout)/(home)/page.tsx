@@ -1,8 +1,8 @@
 import {getTranslations, unstable_setRequestLocale} from "next-intl/server";
-import { cookies } from 'next/headers'
 
 import HomeContainer from "@/components/Home";
-import {StorageKey} from "@/constants";
+import {getAllSeoProducts} from "@/api/request/product";
+import axios from "axios";
 
 export async function generateMetadata({params: {locale}}: { params: { locale: string } }) {
     const t = await getTranslations({locale, namespace: 'HomePage'});
@@ -21,9 +21,15 @@ export async function generateMetadata({params: {locale}}: { params: { locale: s
 export default async function HomePage({params: {locale}}: { params: { locale: string } }) {
     // Enable static rendering
     unstable_setRequestLocale(locale);
-    const cookieStore =  cookies()
-    const token = cookieStore.get(StorageKey.TOKEN)
-    console.log('token', token)
 
-    return (<HomeContainer/>);
+    // Initiate both requests in parallel
+    const getPublicAPI = await axios.get('https://api.thecatapi.com/v1/images/search?limit=10')
+    const publicData = await getPublicAPI.data;
+    console.log('getPublicAPI', publicData)
+
+    const [seoProducts] = await Promise.all([getAllSeoProducts()])
+    console.log('seoProducts', seoProducts)
+
+
+    return (<HomeContainer seoProducts={seoProducts}/>);
 }
