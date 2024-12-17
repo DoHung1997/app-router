@@ -1,6 +1,8 @@
 {
   "login": "Login",
   "register": "Register",
+  "log_out": "Logout",
+  "server_error": "Server error",
   "home": "Home",
   "product": "Product",
   "customer": "Customer",
@@ -14,6 +16,9 @@
   "close": "Close",
   "submit": "Submit",
   "AuthPage": {
+    "signed_in_as": "Signed in as",
+    "login_success": "Login Success",
+    "server_error": "Server Error",
     "dont_have_account": "Don't have an account",
     "already_have_account": "Already have an account",
     "email_is_required": "Email is required!",
@@ -25,36 +30,30 @@
     "last_name_is_required": "Last name is required",
     "last_name_is_too_long_short": "Last name is too long(short)",
     "company_is_required": "Company is required",
-    "phone_number_is_invalid": "Your phone number is invalid"
+    "phone_number_is_invalid": "Your phone number is invalid",
+    "password_rule": "Please set the password between 8 and 64 characters long, including letters and numbers. It must also contain at least one special character (e.g. !, @, #) and one uppercase character. Example: 'Password@123'",
+    "confirm_password_not_match": "The confirmed password does not match the password.",
+    "incorrect_username_and_password": "Incorrect username or password"
   },
   "HomePage": {
-    "title": "Hello world!",
-    "description": "Home Page",
-    "about": "Go to the About page",
     "og": {
       "title": "Home",
       "description": "Home Page"
-    }
+    },
+    "we_make_easy_pdf": "We make PDF easy",
+    "easy_to_use": "Free and easy-to-use online PDF tools can boost your productivity."
   },
-  "ProductPage": {
-    "product": "Product",
-    "title": "Product Hello world!",
-    "description": "Product Page",
-    "about": "Go to the About page",
-    "home": "Go to Home Page",
+  "ViewerPage": {
     "og": {
-      "title": "Product",
-      "description": "Product Page"
-    }
+      "title": "PDF View",
+      "description": "PDF Viewer",
+      "title_upload": "Upload PDF",
+      "description_upload": "Upload PDF"
+    },
+    "choose_file": "Choose File",
+    "click_or_drag_file_to_upload": "Click or drag file to this area to upload"
   },
-  "CustomerPage": {
-    "customer": "Customer",
-    "title": "Customer Hello world!",
-    "about": "Go to the About page",
-    "home": "Go to Customer Page",
-    "og": {
-      "title": "Customer",
-      "description": "Customer Page"
-    }
+  "DocumentPage": {
+    "my_document": "My Document"
   }
 }
