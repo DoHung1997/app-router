@@ -14,9 +14,5 @@ export default function LogoutPage({params: {locale}}: { params: { locale: strin
     // Enable static rendering
     unstable_setRequestLocale(locale);
 
-    return (
-        <>
-            <Logout/>
-        </>
-    );
+    return (<Logout/>);
 };

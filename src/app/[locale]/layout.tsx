@@ -35,7 +35,6 @@ export default async function LocaleLayout({
     const messages = await getMessages();
     unstable_setRequestLocale(locale);
 
-
     return (
         <html lang={locale}>
         <body suppressHydrationWarning={true}>

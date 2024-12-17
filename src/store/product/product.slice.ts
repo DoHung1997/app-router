@@ -5,7 +5,7 @@ import {getSeoProducts} from "@/store/product/product.action";
 
 const initialState: ProductInitStateType = {
     statusProductAction: '',
-    products: []
+    products: null
 }
 
 const productSlice = createSlice({
@@ -16,6 +16,7 @@ const productSlice = createSlice({
         builder
             .addCase(getSeoProducts.pending, (state) => {
                 state.statusProductAction = StoreStatus.PENDING;
+                state.products = null
             })
             .addCase(getSeoProducts.fulfilled, (state, {payload}) => {
                 state.statusProductAction = StoreStatus.FULFILLED;
@@ -23,6 +24,7 @@ const productSlice = createSlice({
             })
             .addCase(getSeoProducts.rejected, (state) => {
                 state.statusProductAction = StoreStatus.REJECTED;
+                state.products = []
             })
     }
 })

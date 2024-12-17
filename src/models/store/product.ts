@@ -2,7 +2,7 @@ import {StoreStatus} from "@/store/store";
 
 export type ProductInitStateType = {
     statusProductAction: StoreStatus | ''
-    products: ProductModel[]
+    products: ProductModel[] | null
 }
 
 

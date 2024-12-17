@@ -3,7 +3,6 @@ import {Avatar, Dropdown, DropdownItem, DropdownMenu, DropdownTrigger} from "@ne
 import {useTranslations} from "next-intl";
 
 import {Link} from "@/i18n/routing";
-import {ROUTES} from "@/constants";
 import {AccountDataType} from "@/models";
 
 const UserMenu = ({userData}: { userData: AccountDataType | null }) => {
@@ -31,7 +30,7 @@ const UserMenu = ({userData}: { userData: AccountDataType | null }) => {
                 </DropdownItem>
 
                 <DropdownItem key="document">
-                    <Link href={ROUTES.MY_DOCUMENT} className={'w-full'}>
+                    <Link href={'/my-document'} className={'w-full'}>
                         <p className={'w-full h-full'}>
                             {t('DocumentPage.my_document')}
                         </p>
@@ -39,7 +38,7 @@ const UserMenu = ({userData}: { userData: AccountDataType | null }) => {
                 </DropdownItem>
 
                 <DropdownItem key="logout" color="danger">
-                    <Link href={ROUTES.LOGOUT} className={'w-full'}>
+                    <Link href={'/auth/logout'} className={'w-full'}>
                         <p className={'w-full'}>
                             {t('log_out')}
                         </p>

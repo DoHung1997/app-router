@@ -1,9 +1,6 @@
 import {getTranslations, unstable_setRequestLocale} from "next-intl/server";
 
 import HomeContainer from "@/components/Home";
-import {getAllSeoProducts} from "@/api/request/product";
-import axios from "axios";
-
 
 
 export async function generateMetadata({params: {locale}}: { params: { locale: string } }) {
