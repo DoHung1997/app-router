@@ -1,5 +1,4 @@
 import {getTranslations, unstable_setRequestLocale} from "next-intl/server";
-import {unstable_noStore} from "next/cache";
 
 import HomeContainer from "@/components/Home";
 import {getAllSeoProducts} from "@/api/request/product";
@@ -27,6 +26,7 @@ export default async function HomePage({params: {locale}}: { params: { locale: s
     const seoProductsData = getAllSeoProducts();
     // Initiate both requests in parallel
     const [seoProducts] = await Promise.all([seoProductsData])
+    console.log('seoProducts', seoProducts)
 
     return (<HomeContainer seoProducts={seoProducts}/>);
 }
