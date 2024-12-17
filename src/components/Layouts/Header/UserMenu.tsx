@@ -29,13 +29,15 @@ const UserMenu = ({userData}: { userData: AccountDataType | null }) => {
                     <p className="font-semibold">{t('AuthPage.signed_in_as')}</p>
                     <p className="font-semibold">{userData.email}</p>
                 </DropdownItem>
-                <DropdownItem key="document" className="h-14 gap-2">
+
+                <DropdownItem key="document">
                     <Link href={ROUTES.MY_DOCUMENT} className={'w-full'}>
-                        <p className={'w-full'}>
+                        <p className={'w-full h-full'}>
                             {t('DocumentPage.my_document')}
                         </p>
                     </Link>
                 </DropdownItem>
+
                 <DropdownItem key="logout" color="danger">
                     <Link href={ROUTES.LOGOUT} className={'w-full'}>
                         <p className={'w-full'}>
